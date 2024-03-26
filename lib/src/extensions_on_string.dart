@@ -80,7 +80,7 @@ extension BankCardNumberValidation on String {
     final number = convertPersianToEnglishNumbers();
 
     // Check if the number matches the format of 16 digits
-    if (!RegExp(r'[0-9]{16}').hasMatch(number)) {
+    if (!RegExp(r'^[0-9]{16}$').hasMatch(number)) {
       return false;
     }
 

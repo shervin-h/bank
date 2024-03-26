@@ -11,7 +11,7 @@ void main() {
   print('6037991236718544'.isValidCardNumber()); // true
 
   // invalid card number
-  print('6037991247518544'.isValidCardNumber()); // true
+  print('6037991247518544'.isValidCardNumber()); // false
   print('-'.isValidCardNumber()); // false
   print('chert-o-pert'.isValidCardNumber()); // false
   print('dskjfk9857394kjkd'.isValidCardNumber()); // false

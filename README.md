@@ -9,10 +9,18 @@
 
 [![pub package](https://img.shields.io/pub/v/bank.svg)](https://pub.dev/packages/bank)
 
-## Getting started
+- Bank card number validation
+- Obtaining bank information using a bank card number
+- Obtaining bank information using Shaba number
+- Convert Persian numbers to English
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- اعتبارسنجی شماره کارت بانکی
+- به دست آوردن اطلاعات بانک با استفاده از شماره کارت بانکی
+- به دست آوردن اطلاعات بانک با استفاده از شماره شبا
+- تبدیل اعداد فارسی به انگلیسی
+
+
+💳 💴 💶 💷 📲 💰 🪙 💵
 
 ## Install Package
 
@@ -40,20 +48,16 @@ flutter pub get
 Import it
 
 ```dart
-import 'package:radial_progress/radial_progress.dart';
+import 'package:bank/bank.dart';
 ```
-
-<p align="center">
-  <img src="https://github.com/shervin-h/bank/blob/main/assets/bank-cards.jpg?raw=true">
-</p>
 
 Now in your dart code:
 
 You can easily validate the bank card number.
-- The `isValidCardNumber()` functionality is defined as an extension on the String class
+- The `isValidCardNumber` functionality is defined as an extension on the String class
 
 به راحتی می توانید شماره کارت بانکی را اعتبارسنجی کنید.
-- تابع "isValidCardNumber()" به عنوان یک extension در کلاس String تعریف شده است.
+- تابع "isValidCardNumber" به عنوان یک extension در کلاس String تعریف شده است.
 
 ```dart
 /// *** bank card number validation *** ///
@@ -66,7 +70,7 @@ print('2222405343248877'.isValidCardNumber()); // true
 print('6037991236718544'.isValidCardNumber()); // true
 
 // invalid card number
-print('6037991247518544'.isValidCardNumber()); // true
+print('6037991247518544'.isValidCardNumber()); // false
 print('-'.isValidCardNumber()); // false
 print('chert-o-pert'.isValidCardNumber()); // false
 print('dskjfk9857394kjkd'.isValidCardNumber()); // false
@@ -75,21 +79,23 @@ print('5892102512214164'.isValidCardNumber()); // false
 
 ```
 
+---
+
 <p align="center">
-  <img src="https://github.com/shervin-h/bank/blob/main/assets/shaba-banks.png?raw=true">
+  <img src="https://github.com/shervin-h/bank/blob/main/assets/bank-cards.jpg?raw=true">
 </p>
 
-You can get the bank information through the bank card number
-If the input string has a valid format, for example, 16 characters and all characters are numbers,
+- You can get the bank information through the bank card number.
+- If the input string has a valid format, for example, 16 characters and all characters are numbers,
 the bank information is returned in the form of an instance of `BankInfo` class.
-If the input string is not valid, null is returned.
+- If the input string is not valid, `null` is returned.
 In some cases, although the input string is correct, the returned object may have an `Unknown` value.
 
-اطلاعات بانک را می توانید از طریق شماره کارت بانکی به دست بیاورید.
-اگر رشته ورودی دارای قالب معتبری باشد، برای مثال، 16 کاراکتر باشد و همه کاراکترها عدد باشند،
-اطلاعات بانکی در قالب نمونه ای از کلاس 'BankInfo' برگردانده می شود.
-اگر رشته ورودی معتبر نباشد، null برگردانده می شود.
-در بعضی مواقع با اینکه رشته ورودی صحیح است اما ممکن است شی برگشت داده شده دارای مقدار `نامشخص` باشد.
+- اطلاعات بانک را می توانید از طریق شماره کارت بانکی به دست بیاورید.
+- اگر رشته ورودی دارای قالب معتبری باشد، برای مثال، 16 کاراکتر باشد و همه کاراکترها عدد باشند،
+  اطلاعات بانکی در قالب نمونه ای از کلاس `BankInfo` برگردانده می شود.
+- اگر رشته ورودی معتبر نباشد، `null` برگردانده می شود.
+- در بعضی مواقع با اینکه رشته ورودی صحیح است اما ممکن است شی برگشت داده شده دارای مقدار `نامشخص` باشد.
 
 ```dart
 /// *** get bank info from card number *** ///
@@ -122,17 +128,23 @@ print(getBankFromCardNumber('chert')); // null
 print(getBankFromCardNumber('dsfskfl&*093627846kljsdjfl')); // null
 ```
 
-You can get the bank information through the shaba number
-If the input string has a valid format, for example, All characters should be numeric except the first two characters which can be IR,
-the bank information is returned in the form of an instance of `BankInfo` class.
-If the input string is not valid, null is returned.
-In some cases, although the input string is correct, the returned object may have an `Unknown` value.
+---
 
-اطلاعات بانک را می توانید از طریق شماره شبا به دست بیاورید.
-اگر رشته ورودی دارای قالب معتبری باشد، برای مثال، همه کاراکترها باید عددی باشند به جز دو کاراکتر اول که می‌توانند IR باشند.
-اطلاعات بانکی در قالب نمونه ای از کلاس 'BankInfo' برگردانده می شود.
-اگر رشته ورودی معتبر نباشد، null برگردانده می شود.
-در بعضی مواقع با اینکه رشته ورودی صحیح است اما ممکن است شی برگشت داده شده دارا مقدار نامشخص باشد.
+<p align="center">
+  <img src="https://github.com/shervin-h/bank/blob/main/assets/shaba-banks.png?raw=true">
+</p>
+
+- You can get the bank information through the shaba number
+- If the input string has a valid format, for example, All characters should be numeric except the first two characters which can be IR,
+the bank information is returned in the form of an instance of `BankInfo` class.
+- If the input string is not valid, null is returned.
+- In some cases, although the input string is correct, the returned object may have an `Unknown` value.
+
+- اطلاعات بانک را می توانید از طریق شماره شبا به دست بیاورید.
+- اگر رشته ورودی دارای قالب معتبری باشد، برای مثال، همه کاراکترها باید عددی باشند به جز دو کاراکتر اول که می‌توانند IR باشند.
+- اطلاعات بانکی در قالب نمونه ای از کلاس 'BankInfo' برگردانده می شود.
+- اگر رشته ورودی معتبر نباشد، null برگردانده می شود.
+- در بعضی مواقع با اینکه رشته ورودی صحیح است اما ممکن است شی برگشت داده شده دارا مقدار نامشخص باشد.
 
 ```dart
 /// *** get bank info from shaba *** ///
@@ -173,6 +185,8 @@ print(getBankFromShaba('kdsl;k()*87ysfjjlk')); // null
 print(getBankFromShaba('-')); // null
 print(getBankFromShaba('46578646578749879846847654')); // null
 ```
+
+<br>
 
 ### by Shervin Hassanzadeh
 
