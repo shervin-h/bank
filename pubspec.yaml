@@ -1,5 +1,5 @@
 name: bank
-description: A starting point for Dart libraries or applications.
+description: A library to validate the bank card number and obtain the bank name from the card number and Shaba number.
 version: 1.0.0
 homepage: https://github.com/shervin-h/bank
 repository: https://github.com/shervin-h/bank

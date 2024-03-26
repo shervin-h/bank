@@ -68,7 +68,6 @@ extension PersianToEnglishNumberConversion on String {
 ///
 /// Developers can use this extension to check whether a given string represents a valid bank card number.
 extension BankCardNumberValidation on String {
-
   /// ## [isValidCardNumber] Method Documentation
   ///
   /// Validates the bank card number.
